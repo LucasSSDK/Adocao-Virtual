@@ -1,2 +1,2 @@
-# Cardapio-Virtual
-Cardápio de restaurante virtual, com usuarios e perfis com seus pratos favoritos.
+# Cadastro-para-adoção
+Cadastro para adoção de Pets, salvar, favoritar pets para adoção.
