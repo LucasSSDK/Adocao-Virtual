@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { StyledForm, StyledLoginForm } from './styles';
 import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
+import { api } from '../../../utils/api/api';
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState<Boolean>(false);
@@ -9,14 +10,16 @@ export function LoginForm() {
     setShowPassword(!showPassword);
   }
 
-  function hadleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function hadleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const loginPayload = {
       email: e.currentTarget.email.value,
       password: e.currentTarget.password.value,
     };
+    const userData =  await api.login(loginPayload);
 
-    console.log(loginPayload);
+    console.log(userData)
+
   }
 
   return (
