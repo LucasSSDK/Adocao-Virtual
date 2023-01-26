@@ -38,6 +38,7 @@ export const StyledForm = styled.form<StyledFormProps>`
     padding: 3px 5px;
     margin: 5px;
     height: 35px;
+    border: ${(props) => (props.error ? "solid 1px red" : "none")};
     
     font-size: 1.2rem;
     border-radius: 5px;
@@ -67,13 +68,12 @@ export const StyledForm = styled.form<StyledFormProps>`
     button {
       display: flex;
       align-items: center;
-      border: ${(props) => (props.error ? 'solid 2px red' : 'none')};\
       border-left: none;
       padding: 0 5px;
       margin: 0;
       cursor: pointer;
       border-radius: 0 5px 5px 0;
-      height: 33px;
+      height: 35px;
       background: ${(props) => props.theme.darkTheme.fg};
       
     
