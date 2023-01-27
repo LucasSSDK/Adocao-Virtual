@@ -3,7 +3,7 @@ import axios, { AxiosError } from 'axios';
 import { HandleError } from '../errors/handle-errors-modal';
 
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'postgres://admin:oDG0J7XtKEdlw7INWf7JeMGifmosI2SJ@dpg-ceb6akta4996med93to0-a.oregon-postgres.render.com/cadastro';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 
