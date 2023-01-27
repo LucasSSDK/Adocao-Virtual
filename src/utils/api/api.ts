@@ -1,4 +1,4 @@
-import { LoginRequest } from '../types/request';
+import { CreatePetsPayload, LoginRequest, UpdatePetsPayload } from '../types/request';
 import axios, { AxiosError } from 'axios';
 import { HandleError } from '../errors/handle-errors-modal';
 
@@ -51,7 +51,7 @@ export const api = {
     }
   },
 
-  getPetShop: async () => {
+  getPet: async () => {
     try {
       const response = await axios.get("/pets");
       return response.data;
@@ -60,7 +60,7 @@ export const api = {
     }
   },
 
-  getPetShopById: async (id: string) => {
+  getPetById: async (id: string) => {
     try {
       const response = await axios.get(`/pets/${id}`);
       if (!response.data) {
@@ -72,7 +72,7 @@ export const api = {
     }
   },
 
-  createPetShop: async (payload: CreatePetShopPayload) => {
+  createPet: async (payload: CreatePetsPayload) => {
     try {
       const response = await axios.post("/pets", payload);
       return response.data;
@@ -81,7 +81,7 @@ export const api = {
     }
   },
 
-  updatePetShop: async (payload: UpdatePetShopPayload) => {
+  updatePet: async (payload: UpdatePetsPayload) => {
     try {
       const response = await axios.patch("/pets", payload);
       return response.data;
@@ -90,7 +90,7 @@ export const api = {
     }
   },
 
-  deletePetShop: async (payload: string) => {
+  deletePet: async (payload: string) => {
     try {
       const response = await axios.delete(`/pets/${payload}`);
       return response.data;

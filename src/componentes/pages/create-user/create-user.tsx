@@ -1,7 +1,9 @@
 import { api } from '../../../utils/api/api';
 
-import { Form, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { HandleError } from '../../../utils/errors/handle-errors-modal';
+import { Form, InputProps } from '../../atoms/form/form';
+import { UserPayload } from '../../../utils/types/request';
 
 export function CreateUser() {
   const navigate = useNavigate();
