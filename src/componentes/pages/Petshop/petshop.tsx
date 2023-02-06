@@ -27,7 +27,11 @@ export function Petshop() {
       <h2>Petshop</h2>
       <Select options={options} selectedOption={setPet} />
       <Select options={module} selectedOption={resultSelect} />
-      
+      {selectedModule == "Categoria 1" && (
+       <>
+
+       </> 
+      )}
     </div>
   );
 }
