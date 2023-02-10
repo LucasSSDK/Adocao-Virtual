@@ -4,12 +4,12 @@ type clickedButtonProps = {
     isSelect: boolean;
 }
 
-export const clickedButton = styled.button<clickedButtonProps>`
+export const ClickedButton = styled.button<clickedButtonProps>`
 display: flex;
-flex-direction: column;
-width: 100%;
-height: 100%;
 align-items: center;
 justify-content: center;
+width: 40%;
+border: 3px solid ${(props) => (props.isSelect ? "green" : "red")};
+border-radius: 10px;
 `;
 

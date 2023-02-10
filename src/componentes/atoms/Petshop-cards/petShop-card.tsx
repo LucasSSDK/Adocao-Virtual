@@ -8,14 +8,14 @@ export type CardProps = {
   color: string;
 };
 
-export function ClassroomCard({ id, name, theme, color }: CardProps) {
+export function PetshopCard({ id, name, theme, color }: CardProps) {
   const navigate = useNavigate();
 
   return (
     <PetShopCardButton
       backgroundColor={color}
       onClick={() => {
-        navigate("/classroom/" + id);
+        navigate("/petshop/" + id);
       }}
     >
       <h2>{name}</h2>

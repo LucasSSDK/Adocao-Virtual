@@ -1,6 +1,6 @@
 import { SelectProps } from "./types";
 import { api } from "../../../utils/api/api";
-import { Petshop } from "../../pages/Petshop/petshop";
+import { Petshop } from "../../pages/Petshop/petshop"; 
 
 
 
