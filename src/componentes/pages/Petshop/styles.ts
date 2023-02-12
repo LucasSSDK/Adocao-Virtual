@@ -8,7 +8,7 @@ export const ClickedButton = styled.button<clickedButtonProps>`
 display: flex;
 align-items: center;
 justify-content: center;
-width: 40%;
+width: 50%;
 border: 3px solid ${(props) => (props.isSelect ? "green" : "red")};
 border-radius: 10px;
 `;

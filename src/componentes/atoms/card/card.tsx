@@ -5,17 +5,16 @@ export type CardProps = {
   nome: string;
   descricao: string;
   isSelected: boolean;
-  selectCard: (data: string) => void;
+  // selectCard: (data: string) => void;
 };
 
-export function Card({ nome, descricao, selectCard }: CardProps) {
+export function Card({ nome, descricao,  }: CardProps) {
   const [isActive, setIsActive] = useState<boolean>(false);
 
 
   return (
     <ClickedButton isSelect={isActive}onClick = {() => {
       setIsActive(!isActive);
-      selectCard(nome);
     }}
       type="button"
     >

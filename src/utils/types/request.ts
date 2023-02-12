@@ -3,6 +3,7 @@ export type LoginRequest = {
     password: string;
   };
   
+  
   export type CreatePetsPayload = {
     name: string;
     theme: string;

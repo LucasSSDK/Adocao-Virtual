@@ -49,16 +49,16 @@ export function Petshop() {
     },
   ];
 
-  const [selectedPets, setSelectedPets] = useState<string[]>([]);
+  // const [selectedPets, setSelectedPets] = useState<string[]>([]);
 
-  function selectPet(value: string) {
-    if (selectedPets.includes(value)) {
-      setSelectedPets((state) => state.filter((petName) => petName != value));
-    } else {
-      setSelectedPets([...selectedPets, value]);
-    }
-  }
-  console.log(selectedPets);
+  // function selectPet(value: string) {
+  //   if (selectedPets.includes(value)) {
+  //     setSelectedPets((state) => state.filter((petName) => petName != value));
+  //   } else {
+  //     setSelectedPets([...selectedPets, value]);
+  //   }
+  // }
+  // console.log(selectedPets);
   return (
     <div>
       <h2>Petshop</h2>
@@ -71,8 +71,8 @@ export function Petshop() {
             <Card
               descricao={pet.descricao}
               nome={pet.nome}
-              isSelected={selectedPets.includes(pet.nome)}
-              selectCard={selectPet}
+              isSelected={selectedPet.includes(pet.nome)}
+              // selectCard={selectPet}
               key={pet.nome}
             />
           );
