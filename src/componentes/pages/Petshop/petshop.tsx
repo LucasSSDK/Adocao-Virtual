@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { Card } from '../../atoms/card/card';
 import { Select } from '../../atoms/select/select';
 import { ClickedButton } from './styles';
+
 
 export function Petshop() {
   const [selectedPet, setPet] = useState<string>('pets');
   const [selectedModule, setSelectModule] = useState<string>();
 
-  const options = ['Pets 1', 'Pets 2', 'Pets 3'];
+  const option = ['Pets 1', 'Pets 2', 'Pets 3'];
   console.log(selectedPet);
 
   const module = ['Categoria 1', 'Categoria 2', 'Categoria 3'];
@@ -28,49 +30,51 @@ export function Petshop() {
       tipo: 'cachorro',
       nome: 'Buck',
       sexo: 'Macho',
-      descrição:
+      descricao:
         'Cachorro de medio porte da raça Pit Bull, na cor branco com manchas marrons',
     },
     {
       tipo: 'Passaro',
       nome: 'Pit',
       sexo: 'Femea',
-      descrição:
+      descricao:
         'Passaro de pequeno porte da raça papagaio, na cor verde, amarelo e pequenos detalhes vermelhos ',
     },
     {
       tipo: 'Gato',
       nome: 'Fifi',
       sexo: 'Femea',
-      descrição:
+      descricao:
         'Gata de pequeno porte da raça siamese, na cor branca com cinza e marron',
     },
   ];
 
-  function selectPet(value: string) {
-    console.log(value);
-  }
+  const [selectedPets, setSelectedPets] = useState<string[]>([]);
 
+  function selectPet(value: string) {
+    if (selectedPets.includes(value)) {
+      setSelectedPets((state) => state.filter((petName) => petName != value));
+    } else {
+      setSelectedPets([...selectedPets, value]);
+    }
+  }
+  console.log(selectedPets);
   return (
     <div>
       <h2>Petshop</h2>
-      <Select options={options} selectedOption={setPet} />
+      <Select options={option} selectedOption={setPet} />
       <Select options={module} selectedOption={resultSelect} />
 
       <form>
-        {petsList.map((pets) => {
+        {petsList.map((pet) => {
           return (
-            <div key={pets.nome}>
-              <label htmlFor={pets.nome}>{pets.nome}</label>
-              <ClickedButton
-                type="button"
-                onClick={() => selectPet(pets.nome)}
-                isSelect={selectPet.includes(pets.nome)}
-              >
-                <h2>{pets.tipo}</h2>
-                <h4>{pets.descrição}</h4>
-              </ClickedButton>
-            </div>
+            <Card
+              descricao={pet.descricao}
+              nome={pet.nome}
+              isSelected={selectedPets.includes(pet.nome)}
+              selectCard={selectPet}
+              key={pet.nome}
+            />
           );
         })}
       </form>
