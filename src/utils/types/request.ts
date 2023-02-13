@@ -2,11 +2,8 @@ export type LoginRequest = {
     email: string;
     password: string;
   };
-  
-  
   export type CreatePetsPayload = {
     name: string;
-    theme: string;
   };
   
   export type UpdatePetsPayload = {
