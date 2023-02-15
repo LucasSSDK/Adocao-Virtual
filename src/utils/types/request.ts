@@ -19,3 +19,9 @@ export type LoginRequest = {
     password: string;
     cpf: string;
   };
+  export type employeePayload = {
+    name: string;
+    email: string;
+    password: string;
+    cpf: string;
+  };
